@@ -3,10 +3,10 @@
 ## Project Goals
 
 ### Core Features
-- User authentication (signup/login, social login)
-- Property listings (create, read, update, delete)
-- Search/filter (location, dates, price, amenities)
-- Booking system (reservations, calendars, payments)
+- Hotel Management Service
+- Customer Service (Search + Booking)
+- View Booking service
+- Bookin system (reservations, calendars, payments)
 - Reviews/ratings for properties and hosts
 
 ### User Experience
@@ -19,28 +19,83 @@
 - Secure payments (Stripe/PayPal integration)
 - Optimized database queries for performance
 
-### Monetization (Optional)
-- Commission-based revenue (e.g., 5% per booking)
-- Featured listings for hosts (premium promotions)
-
-## Tech Stack
+## Technology Stack
 
 ### Frontend
 - **Framework**: React.js (Next.js for SSR/SEO)
 - **Styling**: Tailwind CSS + CSS Modules (or Chakra UI)
-- **State Management**: Redux Toolkit or React Context
+- **State Management**: MobX - Automatic reactivity over explicit updates.
 - **Maps**: Google Maps API or Mapbox
 
 ### Backend
-- **Language**: Node.js (Express) or Python (Django)
-- **Database**: PostgreSQL (relational) + Firebase (for real-time features)
-- **Auth**: Firebase Auth or Auth0
-- **Payments**: Stripe SDK or PayPal API
+- **Language**: Python (Django) - Web framework for rapid backend development (admin panel, ORM, security)
+- **Database**: PostgreSQL (relational) - Relational database for structured data (bookings, users, listings).
+- **GraphQL**: Query language for efficient API data fetching (avoids overfetching).
+- **Auth0**: Pre-built authentication (social login, JWT support)
+- **Celery**: For handling asynchronous tasks such as sending notifications or processing payments.
+- **Redis**: Used for caching and session management.
+- **Docker**: Containerization tool for consistent development and deployment environments.
+- **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
 
-### DevOps
-- **Hosting**: Vercel (frontend), AWS/Heroku (backend)
-- **CI/CD**: GitHub Actions
-- **Monitoring**: Sentry for error tracking
+### Team Roles
+- **Business Analyst (BA)**: Business analyser, responsible for business decisions.
+- **Project Manager (PM)**: team management and motivation.
+- **UX/UI Designer**: Create UI Design components and emplement.
+- **Software Architect**: To ensure compliance to industry standard and building with best practices.
+- **Software Developer**: A craftman that builds scalable apps and adaptive to changes.
+- **Quality Assurance (QA) Engineer**: Makes sure an application performs according to requirements
+- **Test and Automation Engineers**: For optimal test case and effeciency monitoring.
+- **DevOps Engineer**: An engineer to manage software interaction with server, cost effective deployments and scalablity.
+
+
+### Database Design
+
+### Key Entities & Relationships
+
+#### Users
+- **Fields**: `id`, `email`, `name`, `role` (guest/host/admin)  
+- **Relationships**:  
+  - One-to-many with `Properties` (hosts own listings)  
+  - One-to-many with `Bookings` (guests make reservations)  
+
+#### Properties
+- **Fields**: `id`, `title`, `location`, `price`, `host_id` (FK to Users)  
+- **Relationships**:  
+  - Many-to-one with `Users` (owned by hosts)  
+  - One-to-many with `Bookings` and `Reviews`  
+
+#### Bookings
+- **Fields**: `id`, `property_id` (FK), `guest_id` (FK), `check_in`, `check_out`  
+- **Relationships**:  
+  - Many-to-one with `Users` (guest) and `Properties`  
+
+#### Reviews
+- **Fields**: `id`, `property_id` (FK), `guest_id` (FK), `rating`, `comment`  
+- **Relationships**:  
+  - Many-to-one with `Users` (author) and `Properties`  
+
+## Feature Breakdown
+
+### User Authentication
+- Secure signup/login with email or social accounts. Enables personalized experiences and protects user data.
+
+### Property Listings
+- Hosts can create and manage property listings with photos, descriptions and pricing. Core to marketplace functionality.
+
+### Search & Filters
+- Users can search properties by location, dates and amenities. Drives discovery and booking conversions.
+
+### Booking System
+- Handles reservations, availability calendars and payments. Critical for monetization and user transactions.
+
+### Reviews & Ratings
+- Guests can leave reviews and ratings for properties. Builds trust and accountability in the community.
+
+### Messaging
+- Direct communication between guests and hosts. Facilitates coordination and improves user experience.
+
+### Admin Dashboard
+- Moderates users, listings and platform content. Maintains platform integrity and safety standards.
 
 ## Project Overview
 
@@ -49,11 +104,6 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 **Development Priorities:**
 1. MVP features (listings, bookings, payments)
 2. Advanced additions (AI recommendations, dynamic pricing)
-
-**Tech Stack Advantages:**
-- Speed (Next.js)
-- Scalability (PostgreSQL)
-- Seamless user interactions
 
 **Key Challenge:**  
 Balancing real-time updates (e.g., booking conflicts) with performance. Consider WebSockets (Socket.io) for messaging/notifications.
