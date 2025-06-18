@@ -47,7 +47,7 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 - **Docker**: Containerization tool for consistent development and deployment environments.
 - **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
 
-### Team Roles
+## Team Roles
 - **Business Analyst (BA)**: Business analyser, responsible for business decisions.
 - **Project Manager (PM)**: team management and motivation.
 - **UX/UI Designer**: Create UI Design components and emplement.
@@ -58,7 +58,7 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 - **DevOps Engineer**: An engineer to manage software interaction with server, cost effective deployments and scalablity.
 
 
-### Database Design
+## Database Design
 
 ### Key Entities & Relationships
 
@@ -106,3 +106,18 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 
 ### Admin Dashboard
 - Moderates users, listings and platform content. Maintains platform integrity and safety standards.
+
+## CI/CD Pipeline
+
+### Overview
+CI/CD (Continuous Integration/Continuous Deployment) automates testing and deployment processes. It ensures code changes are reliably tested and deployed to production.
+
+### Why It's Important
+- Catches bugs early through automated testing  
+- Enables frequent, low-risk deployments  
+- Maintains consistent environments from development to production  
+
+### Tools  
+- **GitHub Actions**: For automated testing and deployment workflows  
+- **Docker**: Containerization for consistent environments  
+- **AWS/Heroku**: Cloud platforms for deployment  
