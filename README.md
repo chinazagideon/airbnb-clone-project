@@ -50,7 +50,7 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 ## Team Roles
 - **Business Analyst (BA)**: Business analyser, responsible for business decisions.
 - **Project Manager (PM)**: team management and motivation.
-- **UX/UI Designer**: Create UI Design components and emplement.
+- **UX/UI Designer**: Create UI Design reusable components and implement.
 - **Software Architect**: To ensure compliance to industry standard and building with best practices.
 - **Software Developer**: A craftman that builds scalable apps and adaptive to changes.
 - **Quality Assurance (QA) Engineer**: Makes sure an application performs according to requirements
