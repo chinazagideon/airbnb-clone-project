@@ -104,6 +104,3 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 **Development Priorities:**
 1. MVP features (listings, bookings, payments)
 2. Advanced additions (AI recommendations, dynamic pricing)
-
-**Key Challenge:**  
-Balancing real-time updates (e.g., booking conflicts) with performance. Consider WebSockets (Socket.io) for messaging/notifications.
