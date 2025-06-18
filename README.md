@@ -1,5 +1,15 @@
 # Airbnb Clone Project Plan
 
+
+## Project Overview
+
+This Airbnb clone aims to replicate core functionalities of short-term rental platforms while allowing customization for niche markets (e.g., luxury stays, pet-friendly homes).
+
+**Development Priorities:**
+
+1. MVP features (listings, bookings, payments)
+2. Advanced additions (AI recommendations, dynamic pricing)
+
 ## Project Goals
 
 ### Core Features
@@ -96,11 +106,3 @@
 
 ### Admin Dashboard
 - Moderates users, listings and platform content. Maintains platform integrity and safety standards.
-
-## Project Overview
-
-This Airbnb clone aims to replicate core functionalities of short-term rental platforms while allowing customization for niche markets (e.g., luxury stays, pet-friendly homes). 
-
-**Development Priorities:**
-1. MVP features (listings, bookings, payments)
-2. Advanced additions (AI recommendations, dynamic pricing)
