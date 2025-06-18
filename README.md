@@ -84,6 +84,21 @@ This Airbnb clone aims to replicate core functionalities of short-term rental pl
 - **Relationships**:  
   - Many-to-one with `Users` (author) and `Properties`  
 
+## API Security
+
+### Security Measures
+- **Authentication**: JWT tokens verify user identity
+- **Authorization**: Role-based access controls (RBAC) restrict actions
+- **Rate Limiting**: Prevents brute force/DDoS attacks
+- **Data Encryption**: HTTPS/TLS for all communications
+- **Input Validation**: Sanitizes all API inputs
+
+### Why It Matters
+- **User Data**: Protects PII from breaches
+- **Payments**: Secures financial transactions
+- **Listings**: Prevents spam/fraudulent content
+- **System**: Maintains availability and integrity
+
 ## Feature Breakdown
 
 ### User Authentication
